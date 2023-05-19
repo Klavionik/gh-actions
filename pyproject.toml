@@ -1,0 +1,4 @@
+[tool.yamlfix]
+explicit_start = false
+line_length = 100
+section_whitelines = 1
