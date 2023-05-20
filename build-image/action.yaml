@@ -42,6 +42,6 @@ runs:
         tags: ${{ steps.meta.outputs.tags }}
         platforms: ${{ inputs.platforms }}
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=gha,scope=${{ inputs.service }}
-        cache-to: type=gha,scope=${{ inputs.service }}
+        cache-from: type=inline
+        cache-to: type=registry,ref=${{ steps.meta.outputs.tags }}
         provenance: false
