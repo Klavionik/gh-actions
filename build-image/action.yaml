@@ -10,7 +10,7 @@ inputs:
     default: .
   platforms:
     description: Target platforms
-    default: linux/amd64,linux/arm64
+    default: linux/arm64
 
 runs:
   using: composite
