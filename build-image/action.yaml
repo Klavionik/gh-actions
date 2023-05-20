@@ -8,12 +8,19 @@ inputs:
   context:
     description: Path to the Dockerfile context
     default: .
+  platforms:
+    description: Target platforms
+    default: linux/arm64
 
 runs:
   using: composite
   steps:
     - name: Checkout
       uses: actions/checkout@v3
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v2
+      with:
+        platforms: ${{ inputs.platforms }}
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Extract Docker image metadata
@@ -33,6 +40,7 @@ runs:
         context: ${{ inputs.context }}
         push: true
         tags: ${{ steps.meta.outputs.tags }}
+        platforms: ${{ inputs.platforms }}
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha,scope=${{ inputs.service }}
         cache-to: type=gha,mode=max,scope=${{ inputs.service }}
