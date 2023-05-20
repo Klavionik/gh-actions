@@ -43,5 +43,5 @@ runs:
         platforms: ${{ inputs.platforms }}
         labels: ${{ steps.meta.outputs.labels }}
         cache-from: type=gha,scope=${{ inputs.service }}
-        cache-to: type=gha,mode=max,scope=${{ inputs.service }}
+        cache-to: type=gha,scope=${{ inputs.service }}
         provenance: false
