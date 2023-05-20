@@ -25,7 +25,6 @@ jobs:
         with:
           context: frontend
           service: frontend
-          platform: linux/amd64
 ```
 
 ## Inputs
@@ -34,4 +33,3 @@ jobs:
 |-------------|--------|------------------------------|---------------------------------|
 | `service`   | String | `app`                        | The last part of the image tag  |
 | `context`   | String | `.` (root of the repository) | Docker build context            |
-| `platforms` | String | `linux/arm64`                | Target platforms                |
