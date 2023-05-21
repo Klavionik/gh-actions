@@ -60,9 +60,9 @@ runs:
         cache-from: type=s3,endpoint_url=https://${{ inputs.cache-endpoint }},bucket=${{ inputs.cache-bucket
           }},access_key_id=${{ inputs.cache-access-key }},secret_access_key=${{ inputs.cache-secret-key
           }},region=${{ inputs.cache-region }},use_path_style=true,mode=max,prefix=${{ inputs.service
-          }}
+          }}-
         cache-to: type=s3,endpoint_url=https://${{ inputs.cache-endpoint }},bucket=${{ inputs.cache-bucket
           }},access_key_id=${{ inputs.cache-access-key }},secret_access_key=${{ inputs.cache-secret-key
           }},region=${{ inputs.cache-region }},use_path_style=true,mode=max,prefix=${{ inputs.service
-          }}
+          }}-
         provenance: false
