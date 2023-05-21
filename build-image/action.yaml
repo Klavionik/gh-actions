@@ -19,13 +19,13 @@ inputs:
     default: mos
   cache-bucket:
     description: S3 bucket to store build cache
-    required: true
+    default: ${{ env.S3_BUCKET }}
   cache-access-key:
     description: S3 access key
-    required: true
+    default: ${{ env.S3_ACCESS_KEY }}
   cache-secret-key:
     description: S3 secret key
-    required: true
+    default: ${{ env.S3_SECRET_KEY }}
 
 runs:
   using: composite
