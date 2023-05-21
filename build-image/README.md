@@ -4,7 +4,7 @@ A GitHub composite action that builds a Docker image and pushes it to GitHub Con
 Registry.
 
 * Image template: `ghcr.io/<owner>/<repository>/<service>`.
-* Caching: inline.
+* Caching: S3 storage.
 
 ## Usage
 

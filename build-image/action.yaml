@@ -11,6 +11,21 @@ inputs:
   platforms:
     description: Target platforms
     default: linux/arm64
+  cache-endpoint:
+    description: S3 endpoint url
+    default: s3.klavionik.dev
+  cache-region:
+    description: S3 region
+    default: mos
+  cache-bucket:
+    description: S3 bucket to store build cache
+    required: true
+  cache-access-key:
+    description: S3 access key
+    required: true
+  cache-secret-key:
+    description: S3 secret key
+    required: true
 
 runs:
   using: composite
@@ -42,6 +57,10 @@ runs:
         tags: ${{ steps.meta.outputs.tags }}
         platforms: ${{ inputs.platforms }}
         labels: ${{ steps.meta.outputs.labels }}
-        cache-from: type=inline
-        cache-to: type=registry,ref=${{ steps.meta.outputs.tags }}
+        cache-from: type=s3,endpoint_url=${{ inputs.cache-endpoint }},bucket=${{ inputs.cache-bucket }},access_key_id=${{
+          inputs.cache-access-key }},secret_access_key=${{ inputs.cache-secret-key }},region=${{ inputs.cache-region
+          }},use_path_style=true
+        cache-to: type=s3,endpoint_url=${{ inputs.cache-endpoint }},bucket=${{ inputs.cache-bucket }},access_key_id=${{
+          inputs.cache-access-key }},secret_access_key=${{ inputs.cache-secret-key }},region=${{ inputs.cache-region
+          }},use_path_style=true
         provenance: false
