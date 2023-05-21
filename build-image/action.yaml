@@ -12,7 +12,7 @@ inputs:
     description: Target platforms
     default: linux/arm64
   cache-endpoint:
-    description: S3 endpoint url
+    description: S3 endpoint URL
     default: s3.klavionik.dev
   cache-region:
     description: S3 region
