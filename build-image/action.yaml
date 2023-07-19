@@ -26,6 +26,9 @@ inputs:
   cache-secret-key:
     description: S3 secret key
     required: true
+  build-args:
+    description: Build-time variables
+    required: false
 
 runs:
   using: composite
@@ -66,3 +69,4 @@ runs:
           }},region=${{ inputs.cache-region }},use_path_style=true,mode=max,prefix=${{ inputs.service
           }}-
         provenance: false
+        build-args: ${{ inputs.build-args }}

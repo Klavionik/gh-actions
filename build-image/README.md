@@ -30,13 +30,14 @@ jobs:
 
 ## Inputs
 
-| Name               | Type   | Default                       | Description                    |
-|--------------------|--------|-------------------------------|--------------------------------|
-| `service`          | String | `app`                         | The last part of the image tag |
-| `context`          | String | `.` (root of the repository)  | Docker build context           |
-| `platforms`        | String | `linux/arm64`                 | Target platforms               |
-| `cache-endpoint`   | String | `s3.klavionik.dev`            | S3 endpoint URL                |
-| `cache-region`     | String | `mos`                         | S3 region                      |
-| `cache-bucket`     | String | -                             | S3 bucket to store build cache |
-| `cache-access-key` | String | -                             | S3 access key                  |
-| `cache-secret-key` | String | -                             | S3 secret key                  |
+| Name                | Type   | Default                       | Description                    |
+|---------------------|--------|-------------------------------|--------------------------------|
+| `service`           | String | `app`                         | The last part of the image tag |
+| `context`           | String | `.` (root of the repository)  | Docker build context           |
+| `platforms`         | String | `linux/arm64`                 | Target platforms               |
+| `cache-endpoint`    | String | `s3.klavionik.dev`            | S3 endpoint URL                |
+| `cache-region`      | String | `mos`                         | S3 region                      |
+| `cache-bucket`      | String | -                             | S3 bucket to store build cache |
+| `cache-access-key`  | String | -                             | S3 access key                  |
+| `cache-secret-key`  | String | -                             | S3 secret key                  |
+| `build-args`        | List   | -                             | Build-time arguments           |
