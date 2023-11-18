@@ -29,6 +29,9 @@ inputs:
   build-args:
     description: Build-time variables
     required: false
+  tags:
+    description: Tags for the output image
+    required: false
 
 runs:
   using: composite
@@ -46,6 +49,7 @@ runs:
       uses: docker/metadata-action@v4
       with:
         images: ghcr.io/${{ github.repository }}/${{ inputs.service }}
+        tags: ${{ inputs.tags }}
     - name: Login to GitHub CR
       uses: docker/login-action@v2
       with:
